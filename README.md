@@ -176,10 +176,10 @@ server {
 ##### If you are doing https follow the steps on the link but skip step 3
 https://www.digitalocean.com/community/tutorials/how-to-secure-nginx-with-let-s-encrypt-on-ubuntu-18-04
 ### important 
-when you call your api in the frontend the base url will
-https://example.com/api/
-and when you save the uploaded file  base url
-https://example.com/uploads/
+* when you call your api in the frontend the base url will
+* https://example.com/api/
+* and when you save the uploaded file  base url
+* https://example.com/uploads/
 ## step #6
 Symlink config
 Nginx needs to be told that a given site is active. To do this, create a symlink in sites-enabled
