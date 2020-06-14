@@ -67,6 +67,7 @@ build it on your machine and run
 npm install -g create-react-app
 npm i
 npm i serve -g
+npm run build
 serve -s build
 ```
 Then copy the file to the server
