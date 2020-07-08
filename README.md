@@ -74,7 +74,7 @@ Then copy the file to the server
 You could use scp you don't need the node_modules directery dont add it to the zip file
 Example
 ```
-scp file.zip remote_username@10.10.0.2:/tmp/
+scp file.zip remote_username@serverIP:/tmp/
 ```
 install unzip
 ```
