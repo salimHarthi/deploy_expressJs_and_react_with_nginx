@@ -141,8 +141,6 @@ server {
     proxy_pass http://localhost:3000/; ## this is the port you run your backend on
   }
 
-    ssl_certificate /etc/letsencrypt/live/example.com/fullchain.pem; # managed by Certbot
-    ssl_certificate_key /etc/letsencrypt/live/example.com/privkey.pem; # managed by Certbot
 }
 ```
 ##### With https for real deployment
@@ -170,8 +168,6 @@ server {
     proxy_pass http://localhost:3000/; ## this is the port you run your backend on
   }
 
-    ssl_certificate /etc/letsencrypt/live/example.com/fullchain.pem; # managed by Certbot
-    ssl_certificate_key /etc/letsencrypt/live/example.com/privkey.pem; # managed by Certbot
 }
 ```
 ##### If you are doing https follow the steps on the link but skip step 3
