@@ -170,6 +170,23 @@ server {
 
 }
 ```
+##### if you are using socket io add this part
+```
+  location ~* \.io {
+      proxy_set_header X-Real-IP $remote_addr;
+      proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+      proxy_set_header Host $http_host;
+      proxy_set_header X-NginX-Proxy false;
+
+      proxy_pass http://localhost:3000; ## this is the port you run your backend on
+      proxy_redirect off;
+
+      proxy_http_version 1.1;
+      proxy_set_header Upgrade $http_upgrade;
+      proxy_set_header Connection "upgrade";
+    }
+```
+
 ##### If you are doing https follow the steps on the link but skip step 3
 https://www.digitalocean.com/community/tutorials/how-to-secure-nginx-with-let-s-encrypt-on-ubuntu-18-04
 ### important 
