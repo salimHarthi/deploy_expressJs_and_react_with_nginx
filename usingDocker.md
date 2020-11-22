@@ -54,7 +54,27 @@ unzip you build file into your `/var/www/example/frontend`
 ```
 unzip /tmp/file.zip -d /var/www/example/frontend
 ```
-## step #6
+## step #6 
+Build your docker file and save your docker file as .img
+### important
+Make sure you are serving your app on ip 0.0.0.0
+```
+docker build -t example .
+```
+```
+docker save -o example.img example
+```
+Move it to the server
+```
+scp example.img remote_username@serverIP:/tmp/ 
+```
+## step #7 
+load your docker files 
+```
+docker run -d -p 3000:3000 --net=host example
+```
+Adding `--net=host` @ill allow your container to connect to the local db
+## step #8
 Create a new site in sites available
 this command will create a file that you can edit
 ```
@@ -137,14 +157,14 @@ https://www.digitalocean.com/community/tutorials/how-to-secure-nginx-with-let-s-
     proxy_pass http://localhost:3000/; ## this is the port you run your backend on
   }
 ```
-## step #6
+## step #9
 Symlink config
 Nginx needs to be told that a given site is active. To do this, create a symlink in sites-enabled
 ```
 cd /etc/nginx/sites-enabled
 ln -s ../sites-available/example.com .
 ```
-## step #7
+## step #10
 check if your configuration is ok
 ```
 sudo nginx -t
@@ -164,3 +184,4 @@ And you’re done! If you go to your browser and type in the IP address of your 
 * https://codeburst.io/how-to-setup-nginx-for-react-a504f38f95ed
 * https://tecadmin.net/install-latest-nodejs-npm-on-ubuntu/
 * https://www.digitalocean.com/community/tutorials/how-to-secure-nginx-with-let-s-encrypt-on-ubuntu-18-04
+* https://docs.docker.com/engine/reference/commandline/build/#:~:text=The%20docker%20build%20command%20builds,a%20file%20in%20the%20context.
