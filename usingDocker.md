@@ -149,8 +149,7 @@ server {
 ##### If you are doing https follow the steps on the link but skip step 3
 https://www.digitalocean.com/community/tutorials/how-to-secure-nginx-with-let-s-encrypt-on-ubuntu-18-04
 ### important 
-* when you call your api in the frontend the base url will
-* https://example.com/api/
+* when you call your api in the frontend the base url will be https://example.com/api/
 * if you have more than one server you con duplicate these lines and change the word `api` and port number
 ```
   location /api/ { ## this is the place to connect you apis
